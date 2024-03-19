@@ -2,11 +2,13 @@
 import { ref } from 'vue';
 import formatMetricName from '../helperFunctions/formatMetricName';
 
+const VITE_API_KEY = import.meta.env.VITE_API_KEY;
+
 const search = ref('');
 const metricsData = ref({});
 let loading = ref(true)
 
-const apiKey = 'AIzaSyAEAPVrCILuoMxjcn0V2sVS_qVgJ6LFsDQ';
+const apiKey = VITE_API_KEY;
 const apiUrlBase = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
 
 async function fetchPageSpeedData() {
